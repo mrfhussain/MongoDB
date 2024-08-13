@@ -38,7 +38,7 @@ JavaScript
 ### Performance Considerations
 **Read Performance:** Indexes improve the speed of read operations by allowing MongoDB to quickly locate the data.
 **Write Performance:** Indexes can slow down write operations because MongoDB must update the indexes whenever a document is inserted, updated, or deleted.
-#### Use Cases
+### Use Cases
 **Frequent Queries:** If your application frequently queries certain fields, creating indexes on those fields can significantly improve performance.
 **Sorting:** Indexes can also improve the performance of sort operations.
-For more detailed information, you can refer to the MongoDB Manual on Indexes (https://www.mongodb.com/docs/manual/indexes/) or the GeeksforGeeks article on Indexing in MongoDB ()
+For more detailed information, you can refer to the MongoDB Manual on Indexes (https://www.mongodb.com/docs/manual/indexes/) or the GeeksforGeeks article on Indexing in MongoDB (https://www.geeksforgeeks.org/indexing-in-mongodb/)
