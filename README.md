@@ -42,3 +42,27 @@ JavaScript
 **Frequent Queries:** If your application frequently queries certain fields, creating indexes on those fields can significantly improve performance.
 **Sorting:** Indexes can also improve the performance of sort operations.
 For more detailed information, you can refer to the MongoDB Manual on Indexes (https://www.mongodb.com/docs/manual/indexes/) or the GeeksforGeeks article on Indexing in MongoDB (https://www.geeksforgeeks.org/indexing-in-mongodb/)
+
+### Statistics for Indexing
+**Ref:** https://www.youtube.com/watch?v=D14wWW9EEx8
+#### Execution statistics
+**Using `$indexStats`**
+
+The `$indexStats` aggregation stage returns statistics regarding the use of each index for a collection. Here’s an example of how to use it:
+```
+db.collection.aggregate([
+  { $indexStats: {} }
+])
+```
+This command will provide details on how often each index is used, which can help you understand the performance and usage of your indexes (https://www.mongodb.com/docs/manual/tutorial/measure-index-use/).
+**Using `explain`**
+
+The explain method provides detailed execution statistics about the query process, including the index used, the number of documents scanned, and the time taken to process the query. You can use it in executionStats mode to get these details:
+```
+db.collection.explain("executionStats").find({ field: "value" })
+```
+Or, you can append the explain method to a query:
+```
+db.collection.find({ field: "value" }).explain("executionStats")
+```
+This will return a detailed report on the query execution, including which indexes were used and how efficient they were (https://www.mongodb.com/docs/manual/tutorial/measure-index-use/) (https://www.mongodb.com/docs/manual/reference/explain-results/)
