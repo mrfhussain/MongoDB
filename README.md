@@ -66,3 +66,11 @@ Or, you can append the explain method to a query:
 db.collection.find({ field: "value" }).explain("executionStats")
 ```
 This will return a detailed report on the query execution, including which indexes were used and how efficient they were (https://www.mongodb.com/docs/manual/tutorial/measure-index-use/) (https://www.mongodb.com/docs/manual/reference/explain-results/)
+
+### Using MongoSh
+- use **cmd** or **powershell**
+#### Common commands
+- `show dbs`
+- `show collections`
+- `use pernis` or `use <database-name>`
+- 
