@@ -73,4 +73,13 @@ This will return a detailed report on the query execution, including which index
 - `show dbs`
 - `show collections`
 - `use pernis` or `use <database-name>`
-- 
+#### Loading last 3 months of data
+```
+var currentDate = new Date();
+var threeMonthsAgo = new Date();
+threeMonthsAgo.setMonth(currentDate.getMonth() - 3);
+
+db.telemetry.find({measured_timestamp_utc: { $gte: threeMonthsAgo }});
+```
+Get stats
+`db.telemetry.find({measured_timestamp_utc: { $gte: threeMonthsAgo }}).explain('executionStats');`
