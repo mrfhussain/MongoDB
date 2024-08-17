@@ -70,6 +70,7 @@ This will return a detailed report on the query execution, including which index
 ### Using MongoSh
 - use **cmd** or **powershell**
 #### Common commands
+- `mongosh` to activate the MongoDB Shell
 - `show dbs`
 - `show collections`
 - `use pernis` or `use <database-name>`
